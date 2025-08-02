@@ -1,5 +1,6 @@
 "use client";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { handleNavClick } from "@/utils/smoothScroll";
 
 export default function Projects() {
   const { ref, isVisible } = useScrollAnimation();
@@ -161,15 +162,15 @@ export default function Projects() {
           <p className="text-slate-300 mb-6 font-light">
             Interested in seeing more detailed project documentation?
           </p>
-          <a
-            href="#contact"
+          <button
+            onClick={() => handleNavClick("#contact")}
             className="inline-flex items-center px-6 py-3 accent-gradient text-white rounded-lg hover:shadow-lg hover:shadow-sky-500/25 transition-all duration-200 font-light transform hover:scale-105"
           >
             Get In Touch
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </a>
+          </button>
         </div>
       </div>
     </section>

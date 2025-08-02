@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { handleNavClick } from "@/utils/smoothScroll";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,12 +18,14 @@ export default function Navbar() {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
+    { href: "#experience", label: "Experience" },
     { href: "#education", label: "Education" },
     { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" },
   ];
 
-  const handleNavClick = () => {
+  const handleNavItemClick = (href: string) => {
+    handleNavClick(href);
     setIsNavOpen(false);
   };
 
@@ -81,16 +84,15 @@ export default function Navbar() {
         <div className="hidden md:block">
           <div className="flex items-center px-6 py-4">
             {navItems.map((item, index) => (
-              <a
+              <button
                 key={item.href}
-                href={item.href}
+                onClick={() => handleNavItemClick(item.href)}
                 className="group flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-zinc-800/50 whitespace-nowrap"
-                onClick={handleNavClick}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className="w-2 h-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="text-sm font-light">{item.label}</span>
-              </a>
+              </button>
             ))}
           </div>
         </div>
@@ -98,16 +100,15 @@ export default function Navbar() {
         <div className="md:hidden p-6">
           <div className="space-y-3 min-w-[200px]">
             {navItems.map((item, index) => (
-              <a
+              <button
                 key={item.href}
-                href={item.href}
-                className="group flex items-center space-x-3 text-slate-300 hover:text-blue-400 transition-all duration-300 p-3 rounded-lg hover:bg-zinc-800/50 border border-transparent hover:border-blue-500/30"
-                onClick={handleNavClick}
+                onClick={() => handleNavItemClick(item.href)}
+                className="group flex items-center space-x-3 text-slate-300 hover:text-blue-400 transition-all duration-300 p-3 rounded-lg hover:bg-zinc-800/50 border border-transparent hover:border-blue-500/30 w-full text-left"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className="w-2 h-2 bg-blue-500 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="text-base font-light">{item.label}</span>
-              </a>
+              </button>
             ))}
           </div>
         </div>
