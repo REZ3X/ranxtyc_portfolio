@@ -39,9 +39,6 @@ export default function Skills() {
     "KiCad",
     "Eagle PCB",
     "LTSpice",
-    "MATLAB",
-    "Arduino IDE",
-    "Proteus",
     "Multisim",
   ];
 
