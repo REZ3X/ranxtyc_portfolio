@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600"],
 });
 
-const siteUrl = "https://ranxtyc.rejaka.id";
+const siteUrl = "https://rani.rejaka.id";
 const siteName = "Rani Anggraini Portfolio";
 const siteDescription =
   "Rani Anggraini - Electronics Communication Engineering student at SMK Negeri 2 Depok Sleman. Expert in PCB design, circuit assembly, electronic systems, and IoT devices. Specializing in multi-layer PCB prototyping, SMD soldering, RF circuit design, and automation systems.";
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     title: "Rani Anggraini | Electronics Communication Engineering Portfolio",
     description: siteDescription,
     images: ["/assets/icon/rani-circle.png"],
-    creator: "@ranxtyc",
+    creator: "@rani",
   },
   robots: {
     index: true,
@@ -173,7 +173,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Rani Anggraini",
-              alternateName: "ranxtyc",
+              alternateName: "rani",
               url: siteUrl,
               image: `${siteUrl}/assets/icon/rani-circle.png`,
               jobTitle: "Electronics Communication Engineering Student",
@@ -227,7 +227,7 @@ export default function RootLayout({
               mainEntity: {
                 "@type": "Person",
                 name: "Rani Anggraini",
-                alternateName: "ranxtyc",
+                alternateName: "rani",
                 description: siteDescription,
                 image: `${siteUrl}/assets/icon/rani-circle.png`,
               },

@@ -4,25 +4,25 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ranxtyc.rejaka.id/</loc>
+    <loc>https://rani.rejaka.id/</loc>
     <lastmod>2025-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://ranxtyc.rejaka.id/assets/icon/rani-circle.png</image:loc>
+      <image:loc>https://rani.rejaka.id/assets/icon/rani-circle.png</image:loc>
       <image:title>Rani Anggraini Portfolio</image:title>
       <image:caption>Electronics Communication Engineering Student</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://ranxtyc.rejaka.id/assets/images/front.jpg</image:loc>
+      <image:loc>https://rani.rejaka.id/assets/images/front.jpg</image:loc>
       <image:title>Rani Anggraini</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://ranxtyc.rejaka.id/assets/images/back.jpg</image:loc>
+      <image:loc>https://rani.rejaka.id/assets/images/back.jpg</image:loc>
       <image:title>Rani Anggraini Gallery</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://ranxtyc.rejaka.id/assets/images/back_2.jpg</image:loc>
+      <image:loc>https://rani.rejaka.id/assets/images/back_2.jpg</image:loc>
       <image:title>Rani Anggraini Projects</image:title>
     </image:image>
   </url>

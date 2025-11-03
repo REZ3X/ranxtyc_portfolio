@@ -3,17 +3,17 @@ export const siteConfig = {
   title: "Rani Anggraini | Electronics Communication Engineering Portfolio",
   description:
     "Rani Anggraini - Electronics Communication Engineering student at SMK Negeri 2 Depok Sleman. Expert in PCB design, circuit assembly, electronic systems, and IoT devices.",
-  url: "https://ranxtyc.rejaka.id",
-  ogImage: "https://ranxtyc.rejaka.id/assets/icon/rani-circle.png",
+  url: "https://rani.rejaka.id",
+  ogImage: "https://rani.rejaka.id/assets/icon/rani-circle.png",
   author: {
     name: "Rani Anggraini",
-    handle: "@ranxtyc",
-    url: "https://ranxtyc.rejaka.id",
+    handle: "@rani",
+    url: "https://rani.rejaka.id",
     instagram: "https://instagram.com/ranxtyc",
   },
   keywords: [
     "Rani Anggraini",
-    "ranxtyc",
+    "rani",
     "Electronics Communication Engineering",
     "PCB Design",
     "Circuit Design",

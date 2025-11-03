@@ -215,7 +215,7 @@ export default function Hero() {
               <ProfileCard
                 name=""
                 title=""
-                handle="ranxtyc"
+                handle="rani"
                 status="Available for Projects"
                 contactText="Get In Touch"
                 avatarUrl="/assets/images/front.jpg"
