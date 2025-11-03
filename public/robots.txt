@@ -1,0 +1,20 @@
+# Robots.txt for Rani Anggraini Portfolio
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Sitemaps
+Sitemap: https://ranxtyc.rejaka.id/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+
+# Bing specific
+User-agent: Bingbot
+Allow: /

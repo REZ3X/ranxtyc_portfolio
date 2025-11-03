@@ -1,16 +1,37 @@
 "use client";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Wrench, Zap, BarChart3, Flame, Ruler, Radio } from "lucide-react";
 
 export default function Skills() {
   const { ref, isVisible } = useScrollAnimation();
 
+  const getSkillIcon = (iconType: string) => {
+    const iconClass = "w-5 h-5";
+    switch (iconType) {
+      case "wrench":
+        return <Wrench className={iconClass} />;
+      case "zap":
+        return <Zap className={iconClass} />;
+      case "chart":
+        return <BarChart3 className={iconClass} />;
+      case "flame":
+        return <Flame className={iconClass} />;
+      case "ruler":
+        return <Ruler className={iconClass} />;
+      case "radio":
+        return <Radio className={iconClass} />;
+      default:
+        return <Wrench className={iconClass} />;
+    }
+  };
+
   const technicalSkills = [
-    { name: "PCB Design", level: 90, icon: "🔧" },
-    { name: "Component Assembly", level: 85, icon: "⚡" },
-    { name: "Circuit Analysis", level: 88, icon: "📊" },
-    { name: "Soldering", level: 92, icon: "🔥" },
-    { name: "Schematic Design", level: 87, icon: "📐" },
-    { name: "Signal Processing", level: 80, icon: "📡" },
+    { name: "PCB Design", level: 90, icon: "wrench" },
+    { name: "Component Assembly", level: 85, icon: "zap" },
+    { name: "Circuit Analysis", level: 88, icon: "chart" },
+    { name: "Soldering", level: 92, icon: "flame" },
+    { name: "Schematic Design", level: 87, icon: "ruler" },
+    { name: "Signal Processing", level: 80, icon: "radio" },
   ];
 
   const software = [
@@ -36,24 +57,24 @@ export default function Skills() {
   ];
 
   return (
-    <section ref={ref} id="skills" className="py-20 section-bg">
+    <section ref={ref} id="skills" className="py-16 sm:py-20 section-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`text-center mb-16 fade-in-up ${
+          className={`text-center mb-12 sm:mb-16 fade-in-up ${
             isVisible ? "animate" : ""
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl font-light text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-light text-white mb-3 sm:mb-4">
             Technical <span className="gradient-text font-medium">Skills</span>
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto font-light">
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light">
             Expertise in electronics communication engineering and hands-on
             technical abilities
           </p>
         </div>
 
         <div
-          className={`grid lg:grid-cols-3 gap-8 stagger-container ${
+          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 stagger-container ${
             isVisible ? "animate" : ""
           }`}
         >
@@ -81,7 +102,9 @@ export default function Skills() {
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
                     <span className="text-slate-300 font-light flex items-center">
-                      <span className="mr-2">{skill.icon}</span>
+                      <span className="mr-2 text-sky-400">
+                        {getSkillIcon(skill.icon)}
+                      </span>
                       {skill.name}
                     </span>
                     <span className="text-sky-400 font-medium">
@@ -127,7 +150,7 @@ export default function Skills() {
               {software.map((item, index) => (
                 <div
                   key={index}
-                  className="tech-badge rounded-lg p-3 text-center transform hover:scale-105 transition-all duration-300"
+                  className="tech-badge rounded-lg p-3 text-center transform hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
                   <span className="text-slate-300 font-light text-sm">
                     {item}

@@ -33,15 +33,19 @@ export default function About() {
         x: -50,
       });
 
-      gsap.set(statsRef.current?.children, {
-        y: 30,
-        scale: 0.8,
-      });
+      if (statsRef.current?.children) {
+        gsap.set(Array.from(statsRef.current.children), {
+          y: 30,
+          scale: 0.8,
+        });
+      }
 
-      gsap.set(cardsRef.current?.children, {
-        x: 50,
-        rotationY: 45,
-      });
+      if (cardsRef.current?.children) {
+        gsap.set(Array.from(cardsRef.current.children), {
+          x: 50,
+          rotationY: 45,
+        });
+      }
 
       ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -68,31 +72,35 @@ export default function About() {
             "-=0.6"
           );
 
-          tl.to(
-            statsRef.current?.children,
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 0.6,
-              ease: "back.out(1.7)",
-              stagger: 0.2,
-            },
-            "-=0.4"
-          );
+          if (statsRef.current?.children) {
+            tl.to(
+              Array.from(statsRef.current.children),
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.6,
+                ease: "back.out(1.7)",
+                stagger: 0.2,
+              },
+              "-=0.4"
+            );
+          }
 
-          tl.to(
-            cardsRef.current?.children,
-            {
-              opacity: 1,
-              x: 0,
-              rotationY: 0,
-              duration: 0.8,
-              ease: "power3.out",
-              stagger: 0.1,
-            },
-            "-=0.6"
-          );
+          if (cardsRef.current?.children) {
+            tl.to(
+              Array.from(cardsRef.current.children),
+              {
+                opacity: 1,
+                x: 0,
+                rotationY: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: 0.1,
+              },
+              "-=0.6"
+            );
+          }
 
           tl.call(() => {
             setHasAnimated(true);
@@ -105,19 +113,23 @@ export default function About() {
   }, [hasAnimated]);
 
   return (
-    <section ref={sectionRef} id="about" className="py-16 section-bg-alt">
+    <section
+      ref={sectionRef}
+      id="about"
+      className="py-16 sm:py-20 section-bg-alt"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={titleRef} className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-light text-white mb-4">
+        <div ref={titleRef} className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-light text-white mb-3 sm:mb-4">
             About <span className="gradient-text font-medium">Me</span>
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto font-light">
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light">
             Electronics Communication Engineering student with a passion for
             innovation
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div ref={textRef} className="space-y-6">
             <p className="text-lg text-slate-300 leading-relaxed font-light">
               As a dedicated Electronics Communication Engineering student, I
@@ -164,7 +176,7 @@ export default function About() {
           </div>
 
           <div ref={cardsRef} className="grid grid-cols-2 gap-4">
-            <div className="professional-card p-6 rounded-xl hover:scale-105 transition-transform duration-300">
+            <div className="professional-card p-6 rounded-xl hover:scale-105 transition-transform duration-300 cursor-pointer">
               <div className="w-12 h-12 accent-gradient rounded-lg flex items-center justify-center mb-4 pulse-glow">
                 <svg
                   className="w-6 h-6 text-white"
@@ -186,7 +198,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="professional-card p-6 rounded-xl hover:scale-105 transition-transform duration-300 mt-6">
+            <div className="professional-card p-6 rounded-xl hover:scale-105 transition-transform duration-300 mt-6 cursor-pointer">
               <div className="w-12 h-12 bg-slate-600 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
@@ -208,7 +220,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="professional-card p-6 rounded-xl hover:scale-105 transition-transform duration-300">
+            <div className="professional-card p-6 rounded-xl hover:scale-105 transition-transform duration-300 cursor-pointer">
               <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
@@ -230,7 +242,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="professional-card p-6 rounded-xl hover:scale-105 transition-transform duration-300 mt-6">
+            <div className="professional-card p-6 rounded-xl hover:scale-105 transition-transform duration-300 mt-6 cursor-pointer">
               <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"

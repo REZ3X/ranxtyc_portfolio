@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import ProfileCard from "@/components/ui/ProfileCard/ProfileCard";
 import { handleNavClick } from "@/utils/smoothScroll";
+import { ArrowRight, Mail } from "lucide-react";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -52,17 +53,21 @@ export default function Hero() {
         y: 30,
       });
 
-      gsap.set(buttonsRef.current?.children, {
-        opacity: 0,
-        y: 30,
-        scale: 0.8,
-      });
+      if (buttonsRef.current?.children) {
+        gsap.set(Array.from(buttonsRef.current.children), {
+          opacity: 0,
+          y: 30,
+          scale: 0.8,
+        });
+      }
 
-      gsap.set(statsRef.current?.children, {
-        opacity: 0,
-        y: 20,
-        scale: 0.8,
-      });
+      if (statsRef.current?.children) {
+        gsap.set(Array.from(statsRef.current.children), {
+          opacity: 0,
+          y: 20,
+          scale: 0.8,
+        });
+      }
 
       gsap.set(blobsRef.current, {
         scale: 0,
@@ -135,31 +140,35 @@ export default function Hero() {
         "-=0.3"
       );
 
-      tl.to(
-        buttonsRef.current?.children,
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-          ease: "back.out(1.7)",
-          stagger: 0.1,
-        },
-        "-=0.2"
-      );
+      if (buttonsRef.current?.children) {
+        tl.to(
+          Array.from(buttonsRef.current.children),
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.5,
+            ease: "back.out(1.7)",
+            stagger: 0.1,
+          },
+          "-=0.2"
+        );
+      }
 
-      tl.to(
-        statsRef.current?.children,
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.4,
-          ease: "back.out(1.7)",
-          stagger: 0.1,
-        },
-        "-=0.1"
-      );
+      if (statsRef.current?.children) {
+        tl.to(
+          Array.from(statsRef.current.children),
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+            stagger: 0.1,
+          },
+          "-=0.1"
+        );
+      }
 
       tl.call(() => {
         setHasAnimated(true);
@@ -173,38 +182,44 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden section-bg"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden section-bg pt-20 sm:pt-24 pb-16 sm:pb-20"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black"></div>
 
       <div
-        ref={(el) => el && (blobsRef.current[0] = el)}
+        ref={(el) => {
+          if (el) blobsRef.current[0] = el;
+        }}
         className="absolute top-20 left-10 w-72 h-72 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"
       ></div>
       <div
-        ref={(el) => el && (blobsRef.current[1] = el)}
+        ref={(el) => {
+          if (el) blobsRef.current[1] = el;
+        }}
         className="absolute top-40 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"
       ></div>
       <div
-        ref={(el) => el && (blobsRef.current[2] = el)}
+        ref={(el) => {
+          if (el) blobsRef.current[2] = el;
+        }}
         className="absolute bottom-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"
       ></div>
 
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div
             ref={profileCardRef}
-            className="flex justify-center lg:justify-end"
+            className="order-1 flex justify-center lg:justify-end"
           >
-            <div className="w-full max-w-md lg:max-w-lg">
+            <div className="w-full max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto lg:mx-0">
               <ProfileCard
-                name="Rani Anggraini"
-                title="Electronics Engineering Student"
+                name=""
+                title=""
                 handle="ranxtyc"
                 status="Available for Projects"
                 contactText="Get In Touch"
-                avatarUrl="/assets/rani-avatar.jpg"
-                miniAvatarUrl="/assets/rani-mini.jpg"
+                avatarUrl="/assets/images/front.jpg"
+                miniAvatarUrl="/assets/images/front.jpg"
                 showUserInfo={false}
                 enableTilt={true}
                 enableMobileTilt={false}
@@ -215,7 +230,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="text-left lg:text-left">
+          <div className="order-2 text-center lg:text-left">
             <h1
               ref={titleRef}
               className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-4 leading-tight"
@@ -224,7 +239,7 @@ export default function Hero() {
                 ref={helloTextRef}
                 className="block text-lg sm:text-xl lg:text-2xl text-slate-400 font-light mb-2"
               >
-                Hello, I'm
+                Hello, I&apos;m
               </span>
               <span ref={nameTextRef} className="gradient-text font-medium">
                 Rani Anggraini
@@ -233,14 +248,14 @@ export default function Hero() {
 
             <p
               ref={subtitleRef}
-              className="text-lg sm:text-xl lg:text-2xl text-slate-300 mb-6 font-light"
+              className="text-lg sm:text-xl lg:text-2xl text-slate-300 mb-4 sm:mb-6 font-light"
             >
               Electronics Communication Engineering Student
             </p>
 
             <p
               ref={descriptionRef}
-              className="text-base sm:text-lg text-slate-400 mb-8 max-w-xl font-light leading-relaxed"
+              className="text-base sm:text-lg text-slate-400 mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed"
             >
               Passionate about PCB design, component assembly, and electronic
               systems. Building the future through innovative electronic
@@ -249,44 +264,20 @@ export default function Hero() {
 
             <div
               ref={buttonsRef}
-              className="flex flex-col sm:flex-row gap-3 mb-8"
+              className="flex flex-col sm:flex-row gap-3 mb-6 sm:mb-8 justify-center lg:justify-start"
             >
               <button
-                onClick={() => handleNavClick("#projects")}
-                className="inline-flex items-center px-8 py-4 accent-gradient text-white rounded-lg hover:shadow-lg hover:shadow-sky-500/25 transition-all duration-200 font-light transform hover:scale-105 group"
+                onClick={() => handleNavClick("#skills")}
+                className="inline-flex items-center justify-center px-8 py-4 accent-gradient text-white rounded-lg hover:shadow-lg hover:shadow-sky-500/25 transition-all duration-200 font-light transform hover:scale-105 group cursor-pointer"
               >
-                View My Projects
-                <svg
-                  className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+                View My Skills
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <button
                 onClick={() => handleNavClick("#contact")}
-                className="inline-flex items-center px-8 py-4 border-2 border-sky-500 text-sky-400 rounded-lg hover:bg-sky-500 hover:text-white transition-all duration-200 font-light transform hover:scale-105 group"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-sky-500 text-sky-400 rounded-lg hover:bg-sky-500 hover:text-white transition-all duration-200 font-light transform hover:scale-105 group cursor-pointer"
               >
-                <svg
-                  className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+                <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-200" />
                 Get In Touch
               </button>
             </div>

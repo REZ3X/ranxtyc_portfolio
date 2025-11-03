@@ -1,49 +1,48 @@
 "use client";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Trophy, Zap, BarChart3, Wrench } from "lucide-react";
 
 export default function EAC() {
   const { ref, isVisible } = useScrollAnimation();
+
+  const getCertIcon = (iconType: string) => {
+    const iconClass = "w-5 h-5";
+    switch (iconType) {
+      case "trophy":
+        return <Trophy className={iconClass} />;
+      case "zap":
+        return <Zap className={iconClass} />;
+      case "chart":
+        return <BarChart3 className={iconClass} />;
+      case "wrench":
+        return <Wrench className={iconClass} />;
+      default:
+        return <Trophy className={iconClass} />;
+    }
+  };
 
   const education = [
     {
       degree: "Vocational School",
       field: "Electronics Communication Engineering",
-      institution: "SMK Technology Institute",
-      period: "2022 - 2025",
+      institution: "SMK Negeri 2 Depok Sleman",
+      period: "2023 - Present",
       description:
         "Specialized in electronic communication systems, PCB design, and component assembly",
-      achievements: [
-        "Top 10% of class",
-        "Electronics Project Competition Winner",
-        "Advanced PCB Design Certification",
-      ],
+      // achievements: [
+      //   "Top 10% of class",
+      //   "Electronics Project Competition Winner",
+      //   "Advanced PCB Design Certification",
+      // ],
     },
   ];
 
   const certifications = [
     {
-      title: "IPC-A-610 Acceptability Standards",
-      issuer: "IPC International",
-      year: "2024",
-      icon: "🏆",
-    },
-    {
-      title: "Altium Designer Certified",
-      issuer: "Altium Limited",
-      year: "2023",
-      icon: "⚡",
-    },
-    {
-      title: "Electronic Circuit Analysis",
-      issuer: "IEEE Standards",
-      year: "2023",
-      icon: "📊",
-    },
-    {
-      title: "Soldering & Assembly Techniques",
-      issuer: "Technical Institute",
-      year: "2023",
-      icon: "🔧",
+      title: "Finalis of Web Development, National Competition Silogy Expo",
+      issuer: "Himpunan Mahasiswa Sistem Informasi, Universitas Singaperbangsa Karawang",
+      year: "2025",
+      icon: "trophy",
     },
   ];
 
@@ -59,24 +58,24 @@ export default function EAC() {
   ];
 
   return (
-    <section ref={ref} id="education" className="py-20 section-bg-alt">
+    <section ref={ref} id="education" className="py-16 sm:py-20 section-bg-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`text-center mb-16 fade-in-up ${
+          className={`text-center mb-12 sm:mb-16 fade-in-up ${
             isVisible ? "animate" : ""
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl font-light text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-light text-white mb-3 sm:mb-4">
             Education &{" "}
-            <span className="gradient-text font-medium">Certifications</span>
+            <span className="gradient-text font-medium">Achievements</span>
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto font-light">
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light">
             Continuous learning and professional development in electronics
             engineering
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <div
             className={`space-y-8 fade-in-left ${isVisible ? "animate" : ""}`}
           >
@@ -122,10 +121,10 @@ export default function EAC() {
                       {edu.description}
                     </p>
                     <div className="space-y-2">
-                      <h5 className="font-medium text-white">
+                      {/* <h5 className="font-medium text-white">
                         Key Achievements:
-                      </h5>
-                      <ul className="space-y-1">
+                      </h5> */}
+                      {/* <ul className="space-y-1">
                         {edu.achievements.map((achievement, idx) => (
                           <li key={idx} className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></div>
@@ -134,14 +133,14 @@ export default function EAC() {
                             </span>
                           </li>
                         ))}
-                      </ul>
+                      </ul> */}
                     </div>
                   </div>
                 </div>
               </div>
             ))}
 
-            <div className="professional-card rounded-2xl p-8">
+            {/* <div className="professional-card rounded-2xl p-8">
               <h4 className="text-xl font-medium text-white mb-6">
                 Relevant Coursework
               </h4>
@@ -157,23 +156,23 @@ export default function EAC() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div
             className={`space-y-8 fade-in-right ${isVisible ? "animate" : ""}`}
           >
             <h3 className="text-2xl font-light text-white mb-6">
-              Certifications
+              Achievements
             </h3>
             <div className="grid gap-6">
               {certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className="professional-card rounded-xl p-6 hover:scale-105 transition-transform duration-300"
+                  className="professional-card rounded-xl p-6 hover:scale-105 transition-transform duration-300 cursor-pointer"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="text-2xl">{cert.icon}</div>
+                    <div className="text-sky-400">{getCertIcon(cert.icon)}</div>
                     <div className="flex-1">
                       <h4 className="text-lg font-medium text-white mb-1">
                         {cert.title}
@@ -183,8 +182,8 @@ export default function EAC() {
                       </p>
                       <p className="text-slate-400 font-light">{cert.year}</p>
                     </div>
-                    <div className="bg-green-900 text-green-300 px-3 py-1 rounded-full text-sm font-light pulse-glow">
-                      Verified
+                    <div className="bg-sky-400 text-[#1a1a1a] px-3 py-1 rounded-full text-sm font-light pulse-glow">
+                      Finalist
                     </div>
                   </div>
                 </div>

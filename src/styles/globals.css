@@ -151,215 +151,13 @@ body {
   background: var(--accent-blue-light);
 }
 
-.hero-profile-card .pc-card {
-  height: 75vh;
-  max-height: 560px;
-  background-image: radial-gradient(
-      farthest-side circle at var(--pointer-x) var(--pointer-y),
-      hsla(199, 100%, 70%, calc(var(--card-opacity) * 0.4)) 4%,
-      hsla(199, 50%, 60%, calc(var(--card-opacity) * 0.3)) 10%,
-      hsla(199, 25%, 50%, calc(var(--card-opacity) * 0.2)) 50%,
-      hsla(199, 0%, 40%, 0) 100%
-    ),
-    radial-gradient(
-      35% 52% at 55% 20%,
-      rgba(14, 165, 233, 0.3) 0%,
-      transparent 100%
-    ),
-    radial-gradient(
-      100% 100% at 50% 50%,
-      rgba(56, 189, 248, 0.2) 1%,
-      transparent 76%
-    ),
-    conic-gradient(
-      from 124deg at 50% 50%,
-      rgba(2, 132, 199, 0.3) 0%,
-      rgba(14, 165, 233, 0.4) 40%,
-      rgba(56, 189, 248, 0.3) 60%,
-      rgba(2, 132, 199, 0.3) 100%
-    ) !important;
-}
-
-.hero-profile-card .pc-inside {
-  background-image: linear-gradient(
-    145deg,
-    #0a0a0a 0%,
-    #1a1a1a 100%
-  ) !important;
-  background-color: rgba(10, 10, 10, 0.95) !important;
-}
-
-.hero-profile-card .pc-content {
-  display: none !important;
-}
-
-.hero-profile-card .pc-user-info {
-  display: none !important;
-}
-
-.hero-profile-card .pc-shine {
-  --sunpillar-clr-1: rgba(14, 165, 233, 0.4) !important;
-  --sunpillar-clr-2: rgba(56, 189, 248, 0.4) !important;
-  --sunpillar-clr-3: rgba(2, 132, 199, 0.4) !important;
-  --sunpillar-clr-4: rgba(7, 89, 133, 0.4) !important;
-  --sunpillar-clr-5: rgba(14, 165, 233, 0.4) !important;
-  --sunpillar-clr-6: rgba(56, 189, 248, 0.4) !important;
-
-  background-image: repeating-linear-gradient(
-      0deg,
-      rgba(14, 165, 233, 0.2) calc(5% * 1),
-      rgba(56, 189, 248, 0.2) calc(5% * 2),
-      rgba(2, 132, 199, 0.2) calc(5% * 3),
-      rgba(7, 89, 133, 0.2) calc(5% * 4),
-      rgba(14, 165, 233, 0.2) calc(5% * 5),
-      rgba(56, 189, 248, 0.2) calc(5% * 6),
-      rgba(14, 165, 233, 0.2) calc(5% * 7)
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      #0a0a0a 0%,
-      rgba(14, 165, 233, 0.15) 3.8%,
-      rgba(56, 189, 248, 0.15) 4.5%,
-      rgba(14, 165, 233, 0.15) 5.2%,
-      #0a0a0a 10%,
-      #0a0a0a 12%
-    ),
-    radial-gradient(
-      farthest-corner circle at var(--pointer-x) var(--pointer-y),
-      hsla(199, 60%, 50%, 0.1) 12%,
-      hsla(199, 40%, 30%, 0.15) 20%,
-      hsla(199, 20%, 10%, 0.25) 120%
-    ) !important;
-
-  filter: brightness(0.6) contrast(1.2) saturate(0.8) opacity(0.6) !important;
-  mix-blend-mode: overlay !important;
-}
-
-.hero-profile-card .pc-card:hover .pc-shine,
-.hero-profile-card .pc-card.active .pc-shine {
-  filter: brightness(1.2) contrast(1.8) saturate(1.5) opacity(0.9) !important;
-  animation: none !important;
-}
-
-.hero-profile-card .pc-shine::before {
-  background-image: linear-gradient(
-      45deg,
-      rgba(14, 165, 233, 0.3),
-      rgba(56, 189, 248, 0.4),
-      rgba(2, 132, 199, 0.3),
-      rgba(14, 165, 233, 0.4),
-      rgba(56, 189, 248, 0.3),
-      rgba(2, 132, 199, 0.3)
-    ),
-    radial-gradient(
-      circle at var(--pointer-x) var(--pointer-y),
-      rgba(14, 165, 233, 0.4) 0%,
-      rgba(0, 0, 0, 0.2) 90%
-    ) !important;
-
-  filter: brightness(0.7) contrast(1.4) saturate(0.6) !important;
-  mix-blend-mode: overlay !important;
-  opacity: 0.3 !important;
-}
-
-.hero-profile-card .pc-card:hover .pc-shine::before,
-.hero-profile-card .pc-card.active .pc-shine::before {
-  filter: brightness(1.4) contrast(2) saturate(1.2) !important;
-  opacity: 0.8 !important;
-}
-
-.hero-profile-card .pc-shine::after {
-  filter: brightness(0.6) contrast(1.3) saturate(0.7) !important;
-  mix-blend-mode: overlay !important;
-  opacity: 0.2 !important;
-}
-
-.hero-profile-card .pc-card:hover .pc-shine::after,
-.hero-profile-card .pc-card.active .pc-shine::after {
-  filter: brightness(1.1) contrast(1.8) saturate(1) !important;
-  opacity: 0.6 !important;
-}
-
-.hero-profile-card .pc-glare {
-  background-image: radial-gradient(
-    farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    rgba(14, 165, 233, 0.3) 12%,
-    rgba(10, 10, 10, 0.8) 90%
-  ) !important;
-  mix-blend-mode: overlay !important;
-  filter: brightness(0.8) contrast(1.3) saturate(0.8) !important;
-  opacity: 0.4 !important;
-}
-
-.hero-profile-card .pc-card:hover .pc-glare,
-.hero-profile-card .pc-card.active .pc-glare {
-  background-image: radial-gradient(
-    farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    rgba(56, 189, 248, 0.5) 12%,
-    rgba(14, 165, 233, 0.3) 40%,
-    rgba(10, 10, 10, 0.8) 90%
-  ) !important;
-  filter: brightness(1.2) contrast(1.6) saturate(1.2) !important;
-  opacity: 0.7 !important;
-}
-
-.hero-profile-card .pc-avatar-content .avatar {
-  bottom: 20px;
-  opacity: 1;
-}
-
-.hero-profile-card .pc-avatar-content::before {
-  display: none !important;
-}
-
-.hero-profile-card.pc-card-wrapper::before {
-  background-image: radial-gradient(
-    circle,
-    rgba(14, 165, 233, 0.3) 0%,
-    transparent 70%
-  ) !important;
-  filter: contrast(1.2) saturate(1.5) blur(30px) !important;
-  opacity: 0.5 !important;
-}
-
-.hero-profile-card.pc-card-wrapper:hover::before,
-.hero-profile-card.pc-card-wrapper.active::before {
-  filter: contrast(1.5) saturate(2) blur(35px) !important;
-  opacity: 0.8 !important;
-  background-image: radial-gradient(
-    circle,
-    rgba(56, 189, 248, 0.4) 0%,
-    rgba(14, 165, 233, 0.2) 50%,
-    transparent 70%
-  ) !important;
-}
-
-.hero-profile-card .pc-card {
-  animation: subtle-pulse 4s ease-in-out infinite !important;
-}
-
-@keyframes subtle-pulse {
-  0%,
-  100% {
-    box-shadow: rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px)
-        calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px,
-      0 0 20px rgba(14, 165, 233, 0.2);
-  }
-  50% {
-    box-shadow: rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px)
-        calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px,
-      0 0 30px rgba(14, 165, 233, 0.3);
-  }
-}
-
-.hero-profile-card .pc-card:hover,
-.hero-profile-card .pc-card.active {
-  animation: none !important;
+/* ProfileCard customization for Hero section */
+.hero-profile-card.pc-card-wrapper {
+  margin: 0 auto;
 }
 
 @media (max-width: 1024px) {
   .hero-profile-card .pc-card {
-    height: 65vh;
     max-height: 480px;
   }
 }
@@ -427,6 +225,24 @@ body {
 .stagger-container.animate .stagger-child {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Mobile-specific ProfileCard centering */
+@media (max-width: 1023px) {
+  .hero-profile-card.pc-card-wrapper {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-profile-card .pc-card {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-profile-card.pc-card-wrapper::before {
+    left: 50% !important;
+    right: auto !important;
+  }
 }
 
 .stagger-container.animate .stagger-child:nth-child(1) {

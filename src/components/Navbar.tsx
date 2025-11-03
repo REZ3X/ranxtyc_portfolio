@@ -20,7 +20,8 @@ export default function Navbar() {
     { href: "#skills", label: "Skills" },
     { href: "#experience", label: "Experience" },
     { href: "#education", label: "Education" },
-    { href: "#projects", label: "Projects" },
+    { href: "#gallery", label: "Gallery" },
+    // { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -34,7 +35,7 @@ export default function Navbar() {
       <div className={`fixed top-6 right-6 z-50 transition-all duration-300`}>
         <button
           onClick={() => setIsNavOpen(!isNavOpen)}
-          className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+          className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 cursor-pointer ${
             isScrolled || isNavOpen
               ? "bg-zinc-900/90 backdrop-blur-md border border-zinc-700/50 shadow-lg"
               : "bg-zinc-800/60 backdrop-blur-sm border border-zinc-600/30"
@@ -69,7 +70,7 @@ export default function Navbar() {
 
       {isNavOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 cursor-pointer"
           onClick={() => setIsNavOpen(false)}
         />
       )}
@@ -87,7 +88,7 @@ export default function Navbar() {
               <button
                 key={item.href}
                 onClick={() => handleNavItemClick(item.href)}
-                className="group flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-zinc-800/50 whitespace-nowrap"
+                className="group flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-zinc-800/50 whitespace-nowrap cursor-pointer"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className="w-2 h-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -103,7 +104,7 @@ export default function Navbar() {
               <button
                 key={item.href}
                 onClick={() => handleNavItemClick(item.href)}
-                className="group flex items-center space-x-3 text-slate-300 hover:text-blue-400 transition-all duration-300 p-3 rounded-lg hover:bg-zinc-800/50 border border-transparent hover:border-blue-500/30 w-full text-left"
+                className="group flex items-center space-x-3 text-slate-300 hover:text-blue-400 transition-all duration-300 p-3 rounded-lg hover:bg-zinc-800/50 border border-transparent hover:border-blue-500/30 w-full text-left cursor-pointer"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className="w-2 h-2 bg-blue-500 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>

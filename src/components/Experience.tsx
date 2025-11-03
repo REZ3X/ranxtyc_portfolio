@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { handleNavClick } from "@/utils/smoothScroll";
+import { Briefcase, GraduationCap, Wrench, Trophy } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,10 +26,12 @@ export default function Experience() {
         y: 50,
       });
 
-      gsap.set(timelineRef.current?.children, {
-        opacity: 0,
-        x: -50,
-      });
+      if (timelineRef.current?.children) {
+        gsap.set(Array.from(timelineRef.current.children), {
+          opacity: 0,
+          x: -50,
+        });
+      }
 
       ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -45,17 +48,19 @@ export default function Experience() {
             ease: "power2.out",
           });
 
-          tl.to(
-            timelineRef.current?.children,
-            {
-              opacity: 1,
-              x: 0,
-              duration: 0.8,
-              ease: "power2.out",
-              stagger: 0.15,
-            },
-            "-=0.4"
-          );
+          if (timelineRef.current?.children) {
+            tl.to(
+              Array.from(timelineRef.current.children),
+              {
+                opacity: 1,
+                x: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                stagger: 0.15,
+              },
+              "-=0.4"
+            );
+          }
 
           tl.call(() => {
             setHasAnimated(true);
@@ -67,6 +72,22 @@ export default function Experience() {
     return () => ctx.revert();
   }, [hasAnimated]);
 
+  const getIconComponent = (iconType: string) => {
+    const iconClass = "w-3 h-3";
+    switch (iconType) {
+      case "briefcase":
+        return <Briefcase className={iconClass} />;
+      case "graduation":
+        return <GraduationCap className={iconClass} />;
+      case "wrench":
+        return <Wrench className={iconClass} />;
+      case "trophy":
+        return <Trophy className={iconClass} />;
+      default:
+        return <Briefcase className={iconClass} />;
+    }
+  };
+
   const experiences = [
     {
       period: "2024 - Present",
@@ -76,37 +97,17 @@ export default function Experience() {
       description: "PCB design and testing for industrial automation",
       key: "5+ PCB prototypes designed",
       technologies: ["Altium Designer", "KiCad"],
-      icon: "💼",
+      icon: "briefcase",
     },
     {
       period: "2023 - 2024",
       role: "Lab Assistant",
-      company: "SMK Technology Institute",
+      company: "SMK Negeri 2 Depok Sleman",
       type: "Part-time",
       description: "Student mentoring and equipment maintenance",
       key: "50+ students mentored",
       technologies: ["Teaching", "Equipment"],
-      icon: "🎓",
-    },
-    {
-      period: "2023",
-      role: "Freelance PCB Designer",
-      company: "Independent",
-      type: "Freelance",
-      description: "PCB design services for startups",
-      key: "10+ projects completed",
-      technologies: ["Eagle PCB", "Simulation"],
-      icon: "🔧",
-    },
-    {
-      period: "2022 - 2023",
-      role: "Electronics Club Leader",
-      company: "SMK Technology Institute",
-      type: "Volunteer",
-      description: "Club leadership and competition organizing",
-      key: "Regional competition winner",
-      technologies: ["Leadership", "Arduino"],
-      icon: "🏆",
+      icon: "graduation",
     },
   ];
 
@@ -126,13 +127,17 @@ export default function Experience() {
   };
 
   return (
-    <section ref={sectionRef} id="experience" className="py-14 section-bg">
+    <section
+      ref={sectionRef}
+      id="experience"
+      className="py-16 sm:py-20 section-bg"
+    >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={titleRef} className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-light text-white mb-3">
+        <div ref={titleRef} className="text-center mb-10 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl font-light text-white mb-3 sm:mb-4">
             <span className="gradient-text font-medium">Experience</span>
           </h2>
-          <p className="text-base text-slate-300 max-w-xl mx-auto font-light">
+          <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto font-light">
             Hands-on experience in electronics engineering and leadership
           </p>
         </div>
@@ -140,7 +145,7 @@ export default function Experience() {
         <div ref={timelineRef} className="relative">
           <div className="absolute left-3 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sky-500 to-purple-500"></div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 sm:space-y-8">
             {experiences.map((exp, index) => (
               <div
                 key={index}
@@ -149,8 +154,8 @@ export default function Experience() {
                 }`}
               >
                 <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 z-10">
-                  <div className="w-5 h-5 bg-gradient-to-r from-sky-500 to-blue-500 rounded-full flex items-center justify-center text-xs pulse-glow">
-                    {exp.icon}
+                  <div className="w-5 h-5 bg-gradient-to-r from-sky-500 to-blue-500 rounded-full flex items-center justify-center text-white pulse-glow">
+                    {getIconComponent(exp.icon)}
                   </div>
                 </div>
 
@@ -161,7 +166,7 @@ export default function Experience() {
                       : "md:ml-auto md:pl-4"
                   }`}
                 >
-                  <div className="professional-card rounded-lg p-3 hover:scale-105 transition-all duration-300 group">
+                  <div className="professional-card rounded-lg p-3 hover:scale-105 transition-all duration-300 group cursor-pointer">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-xs text-sky-400 font-light">
                         {exp.period}
