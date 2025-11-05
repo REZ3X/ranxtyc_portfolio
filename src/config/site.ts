@@ -1,30 +1,30 @@
 export const siteConfig = {
-  name: "Rani Anggraini Portfolio",
-  title: "Rani Anggraini | Electronics Communication Engineering Portfolio",
-  description:
-    "Rani Anggraini - Electronics Communication Engineering student at SMK Negeri 2 Depok Sleman. Expert in PCB design, circuit assembly, electronic systems, and IoT devices.",
-  url: "https://rani.rejaka.id",
-  ogImage: "https://rani.rejaka.id/assets/icon/rani-circle.png",
-  author: {
-    name: "Rani Anggraini",
-    handle: "@rani",
-    url: "https://rani.rejaka.id",
-    instagram: "https://instagram.com/ranxtyc",
-  },
-  keywords: [
-    "Rani Anggraini",
-    "rani",
-    "Electronics Communication Engineering",
-    "PCB Design",
-    "Circuit Design",
-    "Electronic Engineering",
-    "SMK Negeri 2 Depok Sleman",
-    "Indonesia Electronics Engineer",
-  ],
-  links: {
-    instagram: "https://instagram.com/ranxtyc",
-    // github: "https://github.com/ranxtyc",
-  },
+	name: "Rani Anggraini Portfolio",
+	title: "Rani Anggraini | Electronics Communication Engineering Portfolio",
+	description:
+		"Rani Anggraini - Electronics Communication Engineering student at SMK Negeri 2 Depok Sleman. Expert in PCB design, circuit assembly, electronic systems, and IoT devices.",
+	url: "https://rani.rejaka.id",
+	ogImage: "https://rani.rejaka.id/assets/icon/rani-circle.png",
+	author: {
+		name: "Rani Anggraini",
+		handle: "@rani",
+		url: "https://rani.rejaka.id",
+		instagram: "https://instagram.com/ranxtyc",
+	},
+	keywords: [
+		"Rani Anggraini",
+		"rani",
+		"Electronics Communication Engineering",
+		"PCB Design",
+		"Circuit Design",
+		"Electronic Engineering",
+		"SMK Negeri 2 Depok Sleman",
+		"Indonesia Electronics Engineer",
+	],
+	links: {
+		instagram: "https://instagram.com/ranxtyc",
+		// github: "https://github.com/ranxtyc",
+	},
 };
 
 // export const experienceData = [
@@ -43,10 +43,10 @@ export const siteConfig = {
 // ];
 
 export const educationData = {
-  institution: "SMK Negeri 2 Depok Sleman",
-  degree: "Electronics Communication Engineering",
-  period: "2022 - Present",
-  status: "Current Student",
+	institution: "SMK Negeri 2 Depok Sleman",
+	degree: "Electronics Communication Engineering",
+	period: "2022 - Present",
+	status: "Current Student",
 };
 
 // export const certificationData = [
@@ -58,34 +58,34 @@ export const educationData = {
 // ];
 
 export const skillsData = {
-  technical: [
-    "PCB Design & Layout",
-    "Circuit Analysis",
-    "Component Assembly",
-    "SMD Soldering",
-    "Signal Processing",
-    "Microcontroller Programming",
-  ],
-  software: [
-    "Altium Designer",
-    "KiCad",
-    "Eagle PCB",
-    "LTSpice",
-    "MATLAB",
-    "Arduino IDE",
-  ],
-  tools: [
-    "Oscilloscope",
-    "Multimeter",
-    "Signal Generator",
-    "Power Supply",
-    "Soldering Station",
-    "Logic Analyzer",
-  ],
+	technical: [
+		"PCB Design & Layout",
+		"Circuit Analysis",
+		"Component Assembly",
+		"SMD Soldering",
+		"Signal Processing",
+		"Microcontroller Programming",
+	],
+	software: [
+		"Altium Designer",
+		"KiCad",
+		"Eagle PCB",
+		"LTSpice",
+		"MATLAB",
+		"Arduino IDE",
+	],
+	tools: [
+		"Oscilloscope",
+		"Multimeter",
+		"Signal Generator",
+		"Power Supply",
+		"Soldering Station",
+		"Logic Analyzer",
+	],
 };
 
 export const statsData = {
-  projects: "50+",
-  pcbDesigns: "15+",
-  yearsExperience: "3+",
+	projects: "50+",
+	pcbDesigns: "15+",
+	yearsExperience: "3+",
 };

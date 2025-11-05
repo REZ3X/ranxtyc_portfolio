@@ -4,94 +4,94 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { X, ZoomIn } from "lucide-react";
 
 interface GalleryItem {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  imageUrl: string;
-  details: string;
+	id: number;
+	title: string;
+	description: string;
+	category: string;
+	imageUrl: string;
+	details: string;
 }
 
 export default function Gallery() {
-  const { ref, isVisible } = useScrollAnimation();
-  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+	const { ref, isVisible } = useScrollAnimation();
+	const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
-  const galleryItems: GalleryItem[] = [
-    {
-      id: 1,
-      title: "",
-      description: "",
-      category: "",
-      imageUrl: "/assets/images/back_2.jpg",
-      details: "",
-    },
-    {
-      id: 2,
-      title: "",
-      description: "",
-      category: "",
-      imageUrl: "/assets/images/back.jpg",
-      details: "",
-    },
-    {
-      id: 3,
-      title: "",
-      description: "",
-      category: "",
-      imageUrl: "/assets/images/front.jpg",
-      details: "",
-    },
-  ];
+	const galleryItems: GalleryItem[] = [
+		{
+			id: 1,
+			title: "",
+			description: "",
+			category: "",
+			imageUrl: "/assets/images/back_2.jpg",
+			details: "",
+		},
+		{
+			id: 2,
+			title: "",
+			description: "",
+			category: "",
+			imageUrl: "/assets/images/back.jpg",
+			details: "",
+		},
+		{
+			id: 3,
+			title: "",
+			description: "",
+			category: "",
+			imageUrl: "/assets/images/front.jpg",
+			details: "",
+		},
+	];
 
-  // const openModal = (item: GalleryItem) => {
-  //   setSelectedItem(item);
-  //   document.body.style.overflow = "hidden";
-  // };
+	// const openModal = (item: GalleryItem) => {
+	//   setSelectedItem(item);
+	//   document.body.style.overflow = "hidden";
+	// };
 
-  // const closeModal = () => {
-  //   setSelectedItem(null);
-  //   document.body.style.overflow = "unset";
-  // };
+	// const closeModal = () => {
+	//   setSelectedItem(null);
+	//   document.body.style.overflow = "unset";
+	// };
 
-  return (
-    <section ref={ref} id="gallery" className="py-16 sm:py-20 section-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className={`text-center mb-12 sm:mb-16 fade-in-up ${
-            isVisible ? "animate" : ""
-          }`}
-        >
-          <h2 className="text-3xl sm:text-4xl font-light text-white mb-3 sm:mb-4">
-            Project <span className="gradient-text font-medium">Gallery</span>
-          </h2>
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light">
-            Visual showcase of electronics projects and achievements
-          </p>
-        </div>
+	return (
+		<section ref={ref} id="gallery" className="py-16 sm:py-20 section-bg">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div
+					className={`text-center mb-12 sm:mb-16 fade-in-up ${
+						isVisible ? "animate" : ""
+					}`}
+				>
+					<h2 className="text-3xl sm:text-4xl font-light text-white mb-3 sm:mb-4">
+						Project <span className="gradient-text font-medium">Gallery</span>
+					</h2>
+					<p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light">
+						Visual showcase of electronics projects and achievements
+					</p>
+				</div>
 
-        <div
-          className={`grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 auto-rows-[250px] stagger-container ${
-            isVisible ? "animate" : ""
-          }`}
-        >
-          {galleryItems.map((item, index) => (
-            <div
-              key={item.id}
-              className={`
+				<div
+					className={`grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 auto-rows-[250px] stagger-container ${
+						isVisible ? "animate" : ""
+					}`}
+				>
+					{galleryItems.map((item, index) => (
+						<div
+							key={item.id}
+							className={`
                 professional-card rounded-xl overflow-hidden relative group
                 hover:scale-105 transition-all duration-300 stagger-child
                 ${index === 0 ? "md:col-span-2 md:row-span-2" : ""}
               `}
-            >
-              <img
-                src={item.imageUrl}
-                alt={`Gallery image ${item.id}`}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+						>
+							<img
+								src={item.imageUrl}
+								alt={`Gallery image ${item.id}`}
+								className="absolute inset-0 w-full h-full object-cover"
+							/>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+							<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
 
-              {/* <div className="absolute inset-0 z-20 p-4 flex flex-col justify-end">
+							{/* <div className="absolute inset-0 z-20 p-4 flex flex-col justify-end">
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-8 h-8 bg-sky-500 rounded-full flex items-center justify-center">
                     <ZoomIn className="w-4 h-4 text-white" />
@@ -108,12 +108,12 @@ export default function Gallery() {
                   {item.description}
                 </p>
               </div> */}
-            </div>
-          ))}
-        </div>
-      </div>
+						</div>
+					))}
+				</div>
+			</div>
 
-      {/* {selectedItem && (
+			{/* {selectedItem && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in"
           onClick={closeModal}
@@ -172,7 +172,7 @@ export default function Gallery() {
         </div>
       )} */}
 
-      <style jsx>{`
+			<style jsx>{`
         @keyframes fade-in {
           from {
             opacity: 0;
@@ -208,6 +208,6 @@ export default function Gallery() {
           overflow: hidden;
         }
       `}</style>
-    </section>
-  );
+		</section>
+	);
 }

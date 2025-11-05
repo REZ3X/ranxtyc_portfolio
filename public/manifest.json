@@ -1,27 +1,27 @@
 {
-  "name": "Rani Anggraini - Electronics Communication Engineering Portfolio",
-  "short_name": "Rani Anggraini",
-  "description": "Professional portfolio of Rani Anggraini - Electronics Communication Engineering student specializing in PCB design, component assembly, and electronic systems.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0ea5e9",
-  "orientation": "portrait-primary",
-  "icons": [
-    {
-      "src": "/assets/icon/rani-circle.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/assets/icon/rani-circle.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "categories": ["education", "productivity", "portfolio"],
-  "lang": "en-US",
-  "dir": "ltr"
+	"name": "Rani Anggraini - Electronics Communication Engineering Portfolio",
+	"short_name": "Rani Anggraini",
+	"description": "Professional portfolio of Rani Anggraini - Electronics Communication Engineering student specializing in PCB design, component assembly, and electronic systems.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#0a0a0a",
+	"theme_color": "#0ea5e9",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "/assets/icon/rani-circle.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/assets/icon/rani-circle.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	],
+	"categories": ["education", "productivity", "portfolio"],
+	"lang": "en-US",
+	"dir": "ltr"
 }
